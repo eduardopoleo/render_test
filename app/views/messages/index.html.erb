@@ -1,0 +1,18 @@
+<h1>Chat Room</h1>
+
+<div id="messages">
+  <%= turbo_stream_from "messages" %>
+  <%= render @messages %>
+</div>
+
+<%= form_with model: @message, data: { turbo_frame: "new_message" } do |form| %>
+  <div>
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+  </div>
+  <%= form.submit "Send Message" %>
+<% end %>
