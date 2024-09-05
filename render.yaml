@@ -21,6 +21,11 @@ services:
         sync: false
       - key: WEB_CONCURRENCY
         value: 2 # sensible default
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis_instance
+          property: connectionString
   - type: redis
     name: redis_instance
     region: ohio
