@@ -28,7 +28,6 @@ services:
           property: connectionString
   - type: redis
     name: redis_instance
-    region: ohio
     plan: free
     maxmemoryPolicy: noeviction
     ipAllowList: [] # only allow internal connection
